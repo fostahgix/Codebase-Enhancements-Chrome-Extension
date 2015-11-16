@@ -1,0 +1,27 @@
+{
+  "name": "Enhance Codebase Kanban",
+  "version": "1.1",
+  "description": "This extension will add functionality to Codebase's Kanban board",
+  "background": {
+    "scripts": ["page_action.js"],
+    "persistent": false
+  },
+  "page_action" :
+  {
+    "default_icon" : "icon.png",
+    "default_title" : "There's a 'G' in this URL!"
+  },
+  "permissions" : [
+    "declarativeContent",
+    "tabs", 
+    "*://*.codebasehq.com/*"
+  ],
+   "content_scripts": [
+    {
+      "matches": ["*://*.codebasehq.com/*"],
+      "js": ["jquery.js", "enhance.js"]
+    }
+  ],
+  "manifest_version": 2
+}
+
